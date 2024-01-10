@@ -1,2 +1,2 @@
 # startup
-Startup idea
+This is a startup idea created by user Jacobtleavitt1
