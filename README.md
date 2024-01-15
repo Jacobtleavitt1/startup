@@ -1,5 +1,5 @@
 # Startup
-This is a startup idea by Jacobtleavitt1.
+This is a startup idea by Jacobtleavitt1 proctected by license. See "LICENSE" for more information.
 
 ## Elevator Pitch
 Did you know that over 98% of employees want to work from home but only 13% actually do. This is because employers don't trust that wfh employees will acomplish the same as traditional employees and employees don't like software that monitors their home computer. This startup will create a program that allows employees to self-report what they will acomplish each day so employers can see what they are working on and verify their progress without using intrusive software.
