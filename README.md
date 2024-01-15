@@ -16,10 +16,10 @@ Did you know that over 98% of employees want to work from home but only 13% actu
 The key features of the site will allow employees and employers to create a type of informal "contract" each day of tasks that need to be completed. This will allow employees to feel the freedom of working from home while providing the employer with reasonable assurance of the employee's work.
 
 ## Technologies
-**Authentication:** Users will log in and their name will be displayed on the main page.
-**Database data:** Lists of tasks for each day will be stored in a database.
-**WebSocket data:** Real time messages recived from employer about the employees tasks.
-**Service:** A service to download tasks to a web calendar will be provided for cross-platform use.
+**Authentication:** Users will log in and their name will be displayed on the main page.  
+**Database data:** Lists of tasks for each day will be stored in a database.  
+**WebSocket data:** Real time messages recived from employer about the employees tasks.  
+**Service:** A service to download tasks to a web calendar will be provided for cross-platform use.  
 
 #### Technologies List
 - HTML - Website structure
