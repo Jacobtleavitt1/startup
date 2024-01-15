@@ -10,7 +10,7 @@ Did you know that over 98% of employees want to work from home but only 13% actu
 - User can see messages from employeer regarding work.
 - User can download tasks to a web calendar for ease of use.
 
-> 98% of employees want to work from home
+> 98% of employees want to work from home  
 > forbs.com
 
 The key features of the site will allow employees and employers to create a type of informal "contract" each day of tasks that need to be completed. This will allow employees to feel the freedom of working from home while providing the employer with reasonable assurance of the employee's work.
