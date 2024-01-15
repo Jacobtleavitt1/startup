@@ -15,7 +15,7 @@ Did you know that over 98% of employees want to work from home but only 13% actu
 
 The key features of the site will allow employees and employers to create a type of informal "contract" each day of tasks that need to be completed. This will allow employees to feel the freedom of working from home while providing the employer with reasonable assurance of the employee's work.
 
-#### Program layout sketch
+### Program layout sketch
 ![Program layout sketch](https://github.com/Jacobtleavitt1/startup/assets/112529618/0faf5847-1cd4-42bb-8506-bcd1794f1bd9)
 
 ## Technologies
@@ -24,7 +24,7 @@ The key features of the site will allow employees and employers to create a type
 **WebSocket data:** Real time messages recived from employer about the employees tasks.  
 **Service:** A service to download tasks to a web calendar will be provided for cross-platform use.  
 
-#### Technologies List
+### Technologies List
 - HTML - Website structure
 - CSS - Hot, chic, edgy style and design
 - JavaScript - Calendar on web that you can add tasks to.
