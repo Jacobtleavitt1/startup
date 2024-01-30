@@ -24,15 +24,58 @@
     </header>
 
     <main>
+      <table>
+        <tr>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr>
+            <td>Check email</td>
+            <td>Check email</td>
+            <td>Check email</td>
+            <td>Check email</td>
+            <td>Check email</td>
+        </tr>
+        <tr>
+            <td>Send emails</td>
+            <td>Send emails</td>
+            <td>Send emails</td>
+            <td>Send emails</td>
+            <td>Send emails</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Start report</td>
+            <td></td>
+            <td>Do report</td>
+            <td>Finish report</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Go to Meeting</td>
+            <td></td>
+        </tr>
+      </table>
       <h1>Schedule</h1>
       <form method="get" action="schedule.html">
-        <label for="name">@</label>
-        <input type="text" id="name" placeholder="username" />
+        <label for="name">Day</label>
+        <select name="cars" id="cars">
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+        </select>
         <br>
-        <label for="name">🔒</label>
-        <input type="text" id="name" placeholder="password" />
+        <label for="name">Task Description</label>
+        <input type="text" id="description" placeholder="description" />
         <br>
-        <button type="submit">Login</button>
+        <button type="submit">Add Task</button>
       </form>
     </main>
 
