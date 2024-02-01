@@ -33,3 +33,7 @@ The key features of the site will allow employees and employers to create a type
 - WebSocket - Messages from employer
 - React - Web framework
 
+### Deliverables
+**HTML:** Added html pages for the user login, the schedule page that contains most of the site's 
+functionality, and the site about information.
+
