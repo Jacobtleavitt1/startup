@@ -1,6 +1,6 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: #FAF9F6;
+    color: #2d2d2d;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -13,7 +13,6 @@ header h1 {
 
 #logo {
     display: inline-block;
-    border: red;
     background-image: conic-gradient(#743ad5, #d53a9d, #743ad5);
     height: 10pt;
     -moz-border-radius:75px;
@@ -23,10 +22,9 @@ header h1 {
 }
 
 nav {
-    border-bottom: 10px solid;
+    border-bottom: 10px solid #743ad5;
     border-image-slice: 1;
     border-width: 5px;
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
 }
 
 nav li {
@@ -38,23 +36,26 @@ nav li a {
     display: inline block;
     padding: 8px;
     padding-bottom: 7px;
-    font-size: 13pt;
+    font-size: 14pt;
     margin: 0;
     text-decoration: none;
-    color: white;
+    color: #2d2d2d;
     vertical-align: super;
 }
 
 #menu-nav-1:hover {
-    background-image: linear-gradient(to left, #C2469C, #d53a9d);
+    background-color: #743ad5;
+    color: white;
 }
 
 #menu-nav-2:hover {
-    background-image: linear-gradient(to left, #BD469E, #C2469C);
+    background-color: #743ad5;
+    color: white;
 }
 
 #menu-nav-3:hover {
-    background-image: linear-gradient(to left, #B745A1, #BB459F);
+    background-color: #743ad5;
+    color: white;
 }
 
 menu {
@@ -63,22 +64,21 @@ menu {
 }
 
 footer {
-    border-top: 10px solid;
+    border-top: 10px solid #d53a9d;
     border-image-slice: 1;
     border-width: 5px;
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
-    font-size: 11pt;
+    font-size: 12pt;
 }
 
 #name {
-    color: white;
+    color: #2d2d2d;
     font-weight: 900;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
 a {
-    color: white;
+    color: #2d2d2d;
 }
 
 footer a {
@@ -90,7 +90,7 @@ footer a {
 main a:hover {
     background-image: linear-gradient(to left, #743ad5, #d53a9d);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -wexbkit-text-fill-color: transparent;
 }
 
 footer a:hover {
@@ -106,9 +106,10 @@ footer a:hover {
     border: solid 2px;
     border-image-slice: 1;
     border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
-    border-radius: 10px;
+    border-radius: 0;
     align-items: center;
     align-self: center;
+    box-shadow: 10px 10px 0 1px gray;
 
     margin-left: 35%;
     margin-top: 12%;
@@ -127,15 +128,16 @@ footer a:hover {
 }
 
 #login-box form input {
-    background-color: black;
+    background-color: #FAF9F6;
     height: 2em;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    color: white;
+    color: #2d2d2d;
     border: solid 2px;
     border-image-slice: 1;
     border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
-    font-size: 10pt;
+    font-size: 11pt;
+    box-shadow: 3px 2px 0 1px gray;
 }
 
 #login-box-label {
@@ -154,24 +156,26 @@ footer a:hover {
 }
 
 #login-box input::placeholder {
-    color: white;
-    font-size: 10pt;
+    color: #2d2d2d;
+    font-size: 11pt;
 }
 
 #login-box button {
     border: solid 2px;
     border-image-slice: 1;
     border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
-    background-color: black;
+    background-color: #FAF9F6;
     margin-top: 2em;
-    font-size: 10pt;
+    font-size: 11pt;
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 0.6em;
     padding-bottom: 0.6em;
-    color: white;
+    color: #2d2d2d;
+    box-shadow: 3px 2px 0 1px gray;
 }
 
 #login-box button:hover {
+    color: white;
     background-image: linear-gradient(to left, #743ad5, #d53a9d);
 }
