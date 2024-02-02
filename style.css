@@ -1,0 +1,45 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    border-bottom: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+
+nav li {
+    display: inline;
+    margin: 0;
+}
+
+nav li a {
+    display: inline block;
+    padding: 8px;
+    padding-bottom: 7px;
+    font-size: 13pt;
+    margin: 0;
+    text-decoration: none;
+    color: white;
+    vertical-align: super;
+}
+
+#menu-nav-1:hover {
+    background-image: linear-gradient(to left, #C2469C, #d53a9d);
+}
+
+#menu-nav-2:hover {
+    background-image: linear-gradient(to left, #BD469E, #C2469C);
+}
+
+menu {
+    padding-left: 0;
+    margin: 0;
+}
+
+#login-box {
+    border: solid #743ad5 thick;
+}
