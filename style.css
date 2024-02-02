@@ -53,6 +53,10 @@ nav li a {
     background-image: linear-gradient(to left, #BD469E, #C2469C);
 }
 
+#menu-nav-3:hover {
+    background-image: linear-gradient(to left, #B745A1, #BB459F);
+}
+
 menu {
     padding-left: 0;
     margin: 0;
