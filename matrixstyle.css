@@ -1,9 +1,9 @@
 :root {
-    --monday: #d53a9d;
-    --tuesday: #AB44A9;
-    --wednesday: #9942B3;
-    --thursday: #883FBD;
-    --friday: #743ad5;
+    --monday: green;
+    --tuesday: green;
+    --wednesday: green;
+    --thursday: green;
+    --friday: green;
     --schedule-background: black;
 }
 
@@ -22,20 +22,21 @@ header h1 {
 
 #logo {
     display: inline-block;
-    border: red;
-    background-image: conic-gradient(#743ad5, #d53a9d, #743ad5);
+    background-image: conic-gradient(green, green);
     height: 10pt;
     -moz-border-radius:75px;
     -webkit-border-radius: 75px;
     width: 10pt;
     transform: rotate(90deg);
+    animation: infinite linear;
+    animation-name: "bounce";
 }
 
 nav {
     border-bottom: 10px solid;
     border-image-slice: 1;
     border-width: 5px;
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    border-image-source: linear-gradient(to left, green, green);
 }
 
 nav li {
@@ -55,15 +56,15 @@ nav li a {
 }
 
 #menu-nav-1:hover {
-    background-image: linear-gradient(to left, #C2469C, #d53a9d);
+    background-image: linear-gradient(to left, green, green);
 }
 
 #menu-nav-2:hover {
-    background-image: linear-gradient(to left, #BD469E, #C2469C);
+    background-image: linear-gradient(to left, green, green);
 }
 
 #menu-nav-3:hover {
-    background-image: linear-gradient(to left, #B745A1, #BB459F);
+    background-image: linear-gradient(to left, green, green);
 }
 
 menu {
@@ -75,7 +76,7 @@ footer {
     border-top: 10px solid;
     border-image-slice: 1;
     border-width: 5px;
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    border-image-source: linear-gradient(to left, green, green);
     font-size: 11pt;
 }
 
@@ -97,13 +98,13 @@ footer a {
 }
 
 main a:hover {
-    background-image: linear-gradient(to left, #743ad5, #d53a9d);
+    background-image: linear-gradient(to left, green, green);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 footer a:hover {
-    background-image: linear-gradient(to left, #743ad5, #d53a9d);
+    background-image: linear-gradient(to left, green, green);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -114,7 +115,7 @@ footer a:hover {
     padding-bottom: 5%;
     border: solid 2px;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    border-image-source: linear-gradient(to left, green, green);
     border-radius: 0;
     align-items: center;
     align-self: center;
@@ -145,7 +146,7 @@ footer a:hover {
     color: white;
     border: solid 2px;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    border-image-source: linear-gradient(to left, green, green);
     font-size: 10pt;
 }
 
@@ -172,7 +173,7 @@ footer a:hover {
 #login-box button {
     border: solid 2px;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    border-image-source: linear-gradient(to left, green, green);
     background-color: black;
     margin-top: 2em;
     font-size: 10pt;
@@ -184,7 +185,7 @@ footer a:hover {
 }
 
 #login-box button:hover {
-    background-image: linear-gradient(to left, #743ad5, #d53a9d);
+    background-image: linear-gradient(to left, green, green);
 }
 
 .schedule-day {
@@ -289,14 +290,14 @@ input {
     color: white;
     border: solid 2px;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    border-image-source: linear-gradient(to left, green, green);
     font-size: 12pt;
 }
 
 button {
     border: solid 2px;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    border-image-source: linear-gradient(to left, green, green);
     background-color: black;
     font-size: 12pt;
     padding-left: 1em;
@@ -307,7 +308,7 @@ button {
 }
 
 button:hover {
-    background-image: linear-gradient(to left, #743ad5, #d53a9d);
+    background-image: linear-gradient(to left, green, green);
 }
 
 #messages {
@@ -341,9 +342,27 @@ button:hover {
     margin-left: 15px;
     border: solid 2px;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    border-image-source: linear-gradient(to left, green, green);
 }
 
 #about-photo h5 {
     margin-left: 15px;
+}
+
+@keyframes bounce {
+    0% {
+        margin-bottom: 0;
+    }
+    25% {
+        margin-bottom: 4px;
+    }
+    50% {
+        margin-bottom: 6px;
+    }
+    75% {
+        margin-bottom: 4px;
+    }
+    100% {
+        margin-bottom: 0;
+    }
 }
