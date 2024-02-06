@@ -33,7 +33,7 @@ The key features of the site will allow employees and employers to create a type
 - WebSocket - Messages from employer
 - React - Web framework
 
-### Deliverables
+## Deliverables
 **HTML:** Added html pages for the user login, the schedule page that contains most of the site's 
 functionality, and the site about information. *Note I have already started doing the css assignment so my site may 
 look like some css is already done.
@@ -45,7 +45,7 @@ look like some css is already done.
 | README.md documentation           | Complete | (Prerequisite) | You're looking at it                                                           |
 | At least 10 Git commits           | Complete | (Prerequisite) |                                                                                |
 | HTML pages                        | Complete | 20/20 (100%)   | 3/3 main pages complete and 1 minor page you can link to from another location |
-| Proper use of HTML tags           | Complete | 10/10 (100%)   | I use <footer>, <nav>, <body>, <main>, <header>, <table>, and many more.       |
+| Proper use of HTML tags           | Complete | 10/10 (100%)   | I use footer, nav, body, main, header, table, and many more.       |
 | Links between pages               | Complete | 10/10 (100%)   | You can use header links to get to pages                                       |
 | Application textual content       | Complete | 10/10 (100%)   |                                                                                |
 | Placeholder for 3rd party service | Complete | 10/10 (100%)   | See "save to calendar" link on schedule.html                                   |
