@@ -35,7 +35,9 @@ The key features of the site will allow employees and employers to create a type
 
 ### Deliverables
 **HTML:** Added html pages for the user login, the schedule page that contains most of the site's 
-functionality, and the site about information.
+functionality, and the site about information. *Note I have already started doing the css assignment so my site may 
+look like some css is already done.
+
 | Requirement                       | Status   | Expected Grade | Notes                                                                          |
 |-----------------------------------|----------|----------------|--------------------------------------------------------------------------------|
 | Simon HTML deployed               | Complete | (Prerequisite) |                                                                                |
