@@ -384,6 +384,7 @@ button:hover {
     width: 15em;
     border: solid 2px var(--friday);
     border-radius: 0;
+    background-color: black;
 }
 
 #settings-box-button {

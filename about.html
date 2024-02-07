@@ -21,12 +21,24 @@
           <li><a href="about.html" id="menu-nav-2">About</a></li>
           <li><a href="index.html" id="menu-nav-3">Logout</a></li>
           <div id="username">Username</div>
-          <div id="settings">⚙</div>
+          <label for="toggle" id="settings"><div id="txt">⚙</div></label>
         </menu>
       </nav>
     </header>
 
     <main>
+        <input type="checkbox" id="toggle" class="hidden">
+        <div id="settings-box">
+            <h3>Themes</h3>
+            <div id="margin">&nbsp;</div>
+            <button id="settings-box-button">Light</button>
+            <button id="settings-box-button">Dark</button>
+            <button id="settings-box-button">Matrix</button>
+            <h3>Logo Bounce</h3>
+            <div id="margin">&nbsp;</div>
+            <button id="settings-box-button">On</button>
+            <button id="settings-box-button">Off</button>
+        </div>
       <h1>About us</h1>
       <h2>What are we?</h2>
       <p class="about">Did you know that over 98% of employees want to work from home but only 13% actually do. 

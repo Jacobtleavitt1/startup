@@ -398,6 +398,7 @@ button:hover {
     border: solid 2px var(--friday);
     border-radius: 0;
     box-shadow: 7px 7px 0 1px gray;
+    background-color: #FAF9F6;
 }
 
 #settings-box-button {
