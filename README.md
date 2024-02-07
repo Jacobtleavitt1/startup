@@ -55,3 +55,17 @@ look like some css is already done.
 | WebSocket data placeholder        | Complete | 10/10 (100%)   | See notes from boss on schedule.html                                           |
 | TOTAL SCORE                       |          | 100/100 (100%) |                                                                                |
 
+**CSS:** Added three css style sheets that corrispond to three distinct website styles: light, dark, and matrix.
+| Requirement                     | Status   | Expected Grade | Notes                                                                      |
+|---------------------------------|----------|----------------|----------------------------------------------------------------------------|
+| Simon CSS deployed              | Complete | (Prerequisite) |                                                                            |
+| GitHub Repository link          | Complete | (Prerequisite) | See website footer                                                         |
+| README.md documentation         | Complete | (Prerequisite) | You're looking at it                                                       |
+| At least 10 Git commits         | Complete | (Prerequisite) | Note I have been working on CSS for a few weeks (even before HTML was due) |
+| Header, footer, and main styled | Complete | 30/30 (100%)   |                                                                            |
+| Navigation elements             | Complete | 20/20 (100%)   | See navigation bar in header                                               |
+| Responsive to window resizing   | Complete | 10/10 (100%)   |                                                                            |
+| Application elements            | Complete | 20/20 (100%)   | See schedule.html                                                          |
+| Application text content        | Complete | 10/10 (100%)   |                                                                            |
+| Application images              | Complete | 10/10 (100%)   | See about.html                                                             |
+| TOTAL SCORE                     |          | 100/100 (100%) |                                                                            |
