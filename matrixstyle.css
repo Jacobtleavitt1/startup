@@ -7,10 +7,12 @@
     --schedule-background: black;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 body {
     background-color: black;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Share Tech Mono', monospace, Arial, Helvetica, sans-serif;
 }
 
 header h1 {
@@ -28,8 +30,10 @@ header h1 {
     -webkit-border-radius: 75px;
     width: 10pt;
     transform: rotate(90deg);
+    
     animation: infinite linear;
-    animation-name: "bounce";
+    animation-name: bounce;
+    animation-duration: 0.5s;
 }
 
 nav {
@@ -325,7 +329,98 @@ button:hover {
     margin-bottom: 7px;
     color: white;
     vertical-align: super;
+
+    margin-left: calc(50% - 20px);
+    margin-right: 20px;
 }
+
+#settings {
+    display: inline-block;
+    right: 20px;
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 1px;
+    font-size: 20pt;
+    
+    margin-bottom: 0px;
+    color: white;
+    vertical-align: bottom;
+    border: none;
+}
+
+#settings:hover {
+    background-image: none;
+    background-color: var(--friday);
+}
+
+#txt:hover {
+    animation: infinite linear;
+    animation-name: spin;
+    animation-duration: 10s;
+}
+
+@keyframes spin { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#settings-box {
+    display: none;
+}
+
+#toggle:checked ~ #settings-box {
+    display: block;
+    content:"Settings";
+    position: absolute;
+    right: 20px;
+    top: 9em;
+    height: 200px;
+    width: 15em;
+    border: solid 2px var(--friday);
+    border-radius: 0;
+}
+
+#settings-box-button {
+    border: solid 2px var(--friday);
+    margin-left: 4px;
+    margin-right: 0;
+    padding: 8px;
+}
+
+#settings-box-button:hover {
+    background-image: none;
+    background-color: var(--friday);
+}
+
+#settings-box h3 {
+    margin: 10px;
+}
+
+#margin {
+    display: inline;
+    width: 10px;
+}
+
+#toggle:checked {
+    accent-color: green;
+}
+
+#settings:active {
+    background-image: none;
+    background-color: var(--friday);
+}
+
+@media (max-width: 600px) {
+    #settings {
+      display: none;
+    }
+  }
 
 .about {
     font-size: 13pt;

@@ -341,7 +341,100 @@ button:hover {
     margin-bottom: 7px;
     color: #2d2d2d;
     vertical-align: super;
+
+    margin-left: calc(50% - 20px);
+    margin-right: 20px;
 }
+
+#settings {
+    display: inline-block;
+    right: 20px;
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 1px;
+    font-size: 20pt;
+    
+    margin-bottom: 0px;
+    color: #2d2d2d;
+    vertical-align: bottom;
+    border: none;
+}
+
+#settings:hover {
+    background-image: none;
+    color: white;
+    background-color: var(--friday);
+}
+
+#txt:hover {
+    animation: infinite linear;
+    animation-name: spin;
+    animation-duration: 10s;
+}
+
+@keyframes spin { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#settings-box {
+    display: none;
+}
+
+#toggle:checked ~ #settings-box {
+    display: block;
+    content:"Settings";
+    position: absolute;
+    right: 20px;
+    top: 9em;
+    height: 200px;
+    width: 15em;
+    border: solid 2px var(--friday);
+    border-radius: 0;
+    box-shadow: 7px 7px 0 1px gray;
+}
+
+#settings-box-button {
+    border: solid 2px var(--friday);
+    margin-left: 4px;
+    margin-right: 0;
+    padding: 8px;
+}
+
+#settings-box-button:hover {
+    background-image: none;
+    background-color: var(--friday);
+}
+
+#settings-box h3 {
+    margin: 10px;
+}
+
+#margin {
+    display: inline;
+    width: 10px;
+}
+
+#toggle:checked {
+    accent-color: green;
+}
+
+#settings:active {
+    background-image: none;
+    background-color: var(--friday);
+}
+
+@media (max-width: 600px) {
+    #settings {
+      display: none;
+    }
+  }
 
 .about {
     font-size: 13pt;

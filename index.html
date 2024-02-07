@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoalCrush</title>
     <link rel="icon" href="icon" />
-    <link rel="stylesheet" href="lightstyle.css">
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
@@ -19,11 +19,24 @@
         <menu>
           <li><a href="about.html" id="menu-nav-1">About</a></li>
           <li><a href="index.html" id="menu-nav-2">Login</a></li>
+          <label for="toggle" id="settings"><div id="txt">⚙</div></label>
         </menu>
       </nav>
     </header>
 
     <main>
+        <input type="checkbox" id="toggle" class="hidden">
+        <div id="settings-box">
+            <h3>Themes</h3>
+            <div id="margin">&nbsp;</div>
+            <button id="settings-box-button">Light</button>
+            <button id="settings-box-button">Dark</button>
+            <button id="settings-box-button">Matrix</button>
+            <h3>Logo Bounce</h3>
+            <div id="margin">&nbsp;</div>
+            <button id="settings-box-button">On</button>
+            <button id="settings-box-button">Off</button>
+        </div>
         <div id="login-box">
             <h1>Please Login</h1>
             <form method="get" action="schedule.html">
@@ -33,7 +46,7 @@
                             <label for="name">@</label>
                         </td>
                         <td id="login-box-input">
-                            <input type="text" id="username" placeholder="username" required />
+                            <input type="text" id="username_input" placeholder="username" required />
                         </td>
                     <tr>
                         <td id="login-box-label">
