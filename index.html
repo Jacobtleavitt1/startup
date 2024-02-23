@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoalCrush</title>
     <link rel="icon" href="icon" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lightstyle.css" id="pagestyle">
+    <script defer src="main.js"></script>
   </head>
 
   <body>
@@ -29,9 +30,9 @@
         <div id="settings-box">
             <h3>Themes</h3>
             <div id="margin">&nbsp;</div>
-            <button id="settings-box-button">Light</button>
-            <button id="settings-box-button">Dark</button>
-            <button id="settings-box-button">Matrix</button>
+            <button id="settings-box-button" onclick="swapStyle('lightstyle.css')">Light</button>
+            <button id="settings-box-button" onclick="swapStyle('style.css')">Dark</button>
+            <button id="settings-box-button" onclick="swapStyle('matrixstyle.css')">Matrix</button>
             <h3>Logo Bounce</h3>
             <div id="margin">&nbsp;</div>
             <button id="settings-box-button">On</button>

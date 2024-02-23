@@ -33,6 +33,10 @@ header h1 {
     -webkit-border-radius: 75px;
     width: 10pt;
     transform: rotate(90deg);
+
+    animation: infinite linear alternate;
+    animation-name: bounce;
+    animation-duration: 0.5s;
 }
 
 nav {
@@ -342,7 +346,8 @@ button:hover {
     color: #2d2d2d;
     vertical-align: super;
 
-    margin-left: calc(50% - 20px);
+    float: inline-end;
+    margin-right: 30px;
 }
 
 #settings {
@@ -358,6 +363,7 @@ button:hover {
     color: #2d2d2d;
     vertical-align: bottom;
     border: none;
+    float: inline-end;
 }
 
 #settings:hover {
@@ -463,4 +469,27 @@ button:hover {
 
 #about-photo h5 {
     margin-left: 15px;
+}
+
+@keyframes bounce {
+    0% {
+        margin-bottom: -2px;
+        width: 8pt;
+    }
+    25% {
+        margin-bottom: 5px;
+        width: 11pt;
+    }
+    50% {
+        margin-bottom: 15px;
+        width: 10pt;
+    }
+    75% {
+        margin-bottom: 5px;
+        width: 11pt;
+    }
+    100% {
+        margin-bottom: 0;
+        width: 8pt;
+    }
 }

@@ -31,17 +31,18 @@ header h1 {
     -webkit-border-radius: 75px;
     width: 10pt;
     transform: rotate(90deg);
+    margin-left: -5px;
     
-    animation: infinite linear;
+    animation: infinite linear alternate;
     animation-name: bounce;
     animation-duration: 0.5s;
 }
 
 nav {
-    border-bottom: 10px solid;
+    width: 100%;
+    border-bottom: 10px solid green;
     border-image-slice: 1;
     border-width: 5px;
-    border-image-source: linear-gradient(to left, green, green);
 }
 
 nav li {
@@ -53,7 +54,7 @@ nav li a {
     display: inline block;
     padding: 8px;
     padding-bottom: 7px;
-    font-size: 13pt;
+    font-size: 14pt;
     margin: 0;
     text-decoration: none;
     color: white;
@@ -331,7 +332,8 @@ button:hover {
     color: white;
     vertical-align: super;
 
-    margin-left: calc(50% - 20px);
+    float: inline-end;
+    margin-right: 30px;
 }
 
 #settings {
@@ -347,6 +349,7 @@ button:hover {
     color: white;
     vertical-align: bottom;
     border: none;
+    float: inline-end;
 }
 
 #settings:hover {
@@ -422,7 +425,7 @@ button:hover {
     #settings {
       display: none;
     }
-  }
+}
 
 .about {
     font-size: 13pt;
@@ -448,15 +451,16 @@ button:hover {
 
 @keyframes bounce {
     0% {
-        margin-bottom: 0;
+        margin-bottom: -2px;
+        width: 8pt;
     }
     25% {
         margin-bottom: 5px;
-        width: 9pt;
+        width: 11pt;
     }
     50% {
         margin-bottom: 15px;
-        width: 10pt
+        width: 10pt;
     }
     75% {
         margin-bottom: 5px;
@@ -464,5 +468,6 @@ button:hover {
     }
     100% {
         margin-bottom: 0;
+        width: 8pt;
     }
 }
