@@ -35,3 +35,7 @@ function bounceOn() {
 function login(username, password) {
     localStorage.setItem("username", username);
 }
+
+function logout() {
+    localStorage.setItem("username", "unknown user")
+}
