@@ -14,7 +14,7 @@ else {
 }
 
 console.log("username " + username)
-document.getElementById("username").textContent = username;
+document.getElementById("username").textContent = username ??= "unknown user";
 
 function swapStyle(sheet) {
     localStorage.setItem("stylesheet", sheet);
@@ -33,7 +33,10 @@ function bounceOn() {
 }
 
 function login(username, password) {
-    localStorage.setItem("username", username);
+    const nameEl = document.querySelector("#username_input");
+    localStorage.setItem("username", nameEl.value);
+    window.location.href = "schedule.html";
+    console.log("Log in");
 }
 
 function logout() {

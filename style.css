@@ -135,14 +135,16 @@ footer a:hover {
     text-align: center;
 }
 
-#login-box form {
+#login-box div {
     text-align: center;
+    align-content: center;
+    align-items: center;
 }
 
-#login-box form input[type=text]:focus {
+#login-box div input[type=text]:focus {
 }
 
-#login-box form input {
+#login-box div input {
     background-color: black;
     height: 2em;
     padding-left: 0.5em;
@@ -282,7 +284,7 @@ select {
     border: var(--monday);
 }
 
-form {
+#login-form {
     font-size: 14pt;
 }
 

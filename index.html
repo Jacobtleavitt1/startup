@@ -18,7 +18,7 @@
       <!-- Navigation -->
       <nav>
         <menu>
-          <li><a href="about.html" id="menu-nav-1">About</a></li>
+          <li><a href="logoutabout.html" id="menu-nav-1">About</a></li>
           <li><a href="index.html" id="menu-nav-2">Login</a></li>
           <label for="toggle" id="settings"><div id="txt">⚙</div></label>
         </menu>
@@ -40,26 +40,26 @@
         </div>
         <div id="login-box">
             <h1>Please Login</h1>
-            <form method="get" action="schedule.html">
-                <table>
-                    <tr>
-                        <td id="login-box-label">
-                            <label for="name">@</label>
-                        </td>
-                        <td id="login-box-input">
-                            <input type="text" id="username_input" placeholder="username" required />
-                        </td>
-                    <tr>
-                        <td id="login-box-label">
-                            <label for="name">🔒</label>
-                        </td>
-                        <td id="login-box-input">
-                            <input type="text" id="password" placeholder="password" required />
-                        </td>
-                    </tr>
-                </table>
-                <button type="submit" onclick="login(username, password)">Login</button>
-            </form>
+              <div id="login-form"> <!--action="schedule.html"-->
+                  <table>
+                      <tr>
+                          <td id="login-box-label">
+                              <label for="name">@</label>
+                          </td>
+                          <td id="login-box-input">
+                              <input type="text" id="username_input" placeholder="username" required />
+                          </td>
+                      <tr>
+                          <td id="login-box-label">
+                              <label for="name">🔒</label>
+                          </td>
+                          <td id="login-box-input">
+                              <input type="text" id="password" placeholder="password" required />
+                          </td>
+                      </tr>
+                  </table>
+                  <button type="submit" onclick="login()">Login</button>
+              </div>
         </div>
     </main>
 
