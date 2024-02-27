@@ -890,9 +890,9 @@ function renderMessages() {
     const list = document.getElementById("boss_messages");
     list.innerHTML = '';
     let i = 0;
-    while (i < messages.length) {
+    while (i < messages.length && i < 5) {
         var entry = document.createElement('li');
-        entry.appendChild(document.createTextNode(messages[i]));
+        entry.appendChild(document.createTextNode(messages[messages.length - (i + 1)]));
         list.appendChild(entry);
         i++
     }
@@ -903,93 +903,58 @@ function renderMessages() {
     }
 }
 
-async function sendMessage() {
-    let i = 0;
-    while (i < 5) {
-        await setTimeout(function() {
-            var MAX = 10;
-            var rand = Math.floor((Math.random() * MAX) + 1);
-            if (rand == 1) {
-                recieveMessage("You suck!");
-            }
-            else if (rand == 2) {
-                recieveMessage("You can't only do emails all day");
-            }
-            else if (rand == 3) {
-                recieveMessage("I hate—so much—the person you chose to be.");
-            }
-            else if (rand == 4) {
-                recieveMessage("You're fired!");
-            }
-            else if (rand == 5) {
-                recieveMessage("Great job!");
-            }
-            else if (rand == 6) {
-                recieveMessage("You're the best");
-            }
-            else if (rand == 7) {
-                recieveMessage("I secretley wish you were my child");
-            }
-            else if (rand == 8) {
-                recieveMessage("I like the way you work it");
-            }
-            else if (rand == 9) {
-                recieveMessage("You are our best employee");
-            }
-            else if (rand == 10) {
-                recieveMessage("Will you marry me?");
-            }
-        }, 5000);
-    }
-}
-
 async function send1Message() {
-    await setTimeout(function() {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1; // months start at 0
+    let dd = today.getDate();
+    let hours = today.getHours();
+    const minutes = today.getMinutes();
+    let mer = "am"
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+    if (hours > 12) mer = "pm";
+    hours = hours % 12;
+    const timestamp = '\t\t\t(' + mm + '/' + dd + '/' + yyyy + ' ' + hours + ':' + minutes + mer + ')';
+
+    setTimeout(function() {
         var MAX = 10;
         var rand = Math.floor((Math.random() * MAX) + 1);
         if (rand == 1) {
-            recieveMessage("You suck!");
+            recieveMessage("You suck!" + timestamp);
         }
         else if (rand == 2) {
-            recieveMessage("You can't only do emails all day");
+            recieveMessage("You can't only do emails all day" + timestamp);
         }
         else if (rand == 3) {
-            recieveMessage("I hate—so much—the person you chose to be.");
+            recieveMessage("I hate—so much—the person you chose to be." + timestamp);
         }
         else if (rand == 4) {
-            recieveMessage("You're fired!");
+            recieveMessage("You're fired!" + timestamp);
         }
         else if (rand == 5) {
-            recieveMessage("Great job!");
+            recieveMessage("Great job!" + timestamp);
         }
         else if (rand == 6) {
-            recieveMessage("You're the best");
+            recieveMessage("You're the best" + timestamp);
         }
         else if (rand == 7) {
-            recieveMessage("I secretley wish you were my child");
+            recieveMessage("I secretley wish you were my child" + timestamp);
         }
         else if (rand == 8) {
-            recieveMessage("I like the way you work it");
+            recieveMessage("I like the way you work it" + timestamp);
         }
         else if (rand == 9) {
-            recieveMessage("You are our best employee");
+            recieveMessage("You are our best employee" + timestamp);
         }
         else if (rand == 10) {
-            recieveMessage("Will you marry me?");
+            recieveMessage("Will you marry me?" + timestamp);
         }
     }, 1000);
 }
 
-async function send2Message() {
-    await send1Message();
-    await send1Message();
+async function sendMessages() {
+    var intervalID = window.setInterval(send1Message, 5000);
 }
 
-send2Message();
-
-/*
-<li>You suck</li>
-<li>You can't only do emails all day</li>
-<li>I hate—so much—the person you chose to be.</li>
-<li>You're fired!</li>
-*/
+sendMessages();
