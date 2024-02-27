@@ -910,12 +910,13 @@ async function send1Message() {
     let dd = today.getDate();
     let hours = today.getHours();
     const minutes = today.getMinutes();
+    const seconds = today.getSeconds();
     let mer = "am"
     if (dd < 10) dd = '0' + dd;
     if (mm < 10) mm = '0' + mm;
     if (hours > 12) mer = "pm";
     hours = hours % 12;
-    const timestamp = '\t\t\t(' + mm + '/' + dd + '/' + yyyy + ' ' + hours + ':' + minutes + mer + ')';
+    const timestamp = '\t\t\t(' + mm + '/' + dd + '/' + yyyy + ' ' + hours + ':' + minutes + ':' + seconds + mer + ')';
 
     setTimeout(function() {
         var MAX = 10;
@@ -954,7 +955,7 @@ async function send1Message() {
 }
 
 async function sendMessages() {
-    var intervalID = window.setInterval(send1Message, 1000);
+    var intervalID = window.setInterval(send1Message, 2700);
 }
 
 sendMessages();

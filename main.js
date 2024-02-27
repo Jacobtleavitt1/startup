@@ -6,10 +6,12 @@ username = localStorage.getItem("username");
 
 swapStyle(stylesheet ??= "lightstyle.css");
 
-if (bounce) {
+console.log("bounce: ", bounce)
+if (bounce == 1) {
+    console.log("bounce on: ", bounce)
     bounceOn();
-}
-else {
+} else {
+    console.log("bounce off: ", bounce)
     bounceOff();
 }
 
@@ -21,14 +23,13 @@ function swapStyle(sheet) {
     document.getElementById("pagestyle").setAttribute("href", sheet); 
 }
 
-// FIXME
 function bounceOff() {
-    localStorage.setItem("bounce", 1);
+    localStorage.setItem("bounce", 0);
     document.getElementById("logo").style.animationDuration = "0s";
 }
 
 function bounceOn() {
-    localStorage.setItem("bounce", 0);
+    localStorage.setItem("bounce", 1);
     document.getElementById("logo").style.animationDuration = "0.5s";
 }
 
