@@ -34,6 +34,7 @@ function bounceOn() {
 
 function login(username, password) {
     const nameEl = document.querySelector("#username_input");
+    const passwordEl = document.querySelector("#password");
     localStorage.setItem("username", nameEl.value);
     window.location.href = "schedule.html";
     console.log("Log in");
