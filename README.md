@@ -69,3 +69,16 @@ look like some css is already done.
 | Application text content        | Complete | 10/10 (100%)   |                                                                            |
 | Application images              | Complete | 10/10 (100%)   | See about.html                                                             |
 | TOTAL SCORE                     |          | 100/100 (100%) |                                                                            |
+
+**JavaScript:** Implamented JavaScript to preform website functions at a superficial level.
+| Requirement               | Status   | Expected Grade | Notes                                                                |
+|---------------------------|----------|----------------|----------------------------------------------------------------------|
+| Simon JavaScript deployed | Complete | (Prerequisite) |                                                                      |
+| GitHub Repository link    | Complete | (Prerequisite) | See footer.                                                          |
+| README.md documentation   | Complete | (Prerequisite) | You're lookin' at it.                                                |
+| At least 10 Git commits   | Complete | (Prerequisite) |                                                                      |
+| Login JavaScript          | Complete | 20/20 (100%)   | See index.html.                                                      |
+| Database JavaScript       | Complete | 20/20 (100%)   | See "Schedule" on schedule.html.                                     |
+| WebSocket JavaScript      | Complete | 20/20 (100%)   | See "Messages from Boss" on schedule.html.                           |
+| Interaction JavaScript    | Complete | 40/40 (100%)   | See settings "⚙" at top, on far right of navigation bar on any page. |
+| TOTAL SCORE               |          | 100/100 (100%) |                                                                      |
