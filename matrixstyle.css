@@ -471,3 +471,12 @@ button:hover {
         width: 8pt;
     }
 }
+
+#boss_messages {
+    background-color: green;
+    color: black;
+    width: 600px; 
+    padding-left: 15px;
+    margin-left: 5px; 
+    background-color: none;
+}

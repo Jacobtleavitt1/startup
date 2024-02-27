@@ -494,3 +494,11 @@ button:hover {
         width: 8pt;
     }
 }
+
+#boss_messages {
+    box-shadow: 0 0 5px 0 gray; 
+    width: 600px; 
+    margin-left: 5px; 
+    background-color: lightgray;
+    border-radius: 5px;
+}

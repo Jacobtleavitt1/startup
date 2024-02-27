@@ -890,7 +890,7 @@ function renderMessages() {
     const list = document.getElementById("boss_messages");
     list.innerHTML = '';
     let i = 0;
-    while (i < messages.length && i < 5) {
+    while (i < messages.length && i < 10) {
         var entry = document.createElement('li');
         entry.appendChild(document.createTextNode(messages[messages.length - (i + 1)]));
         list.appendChild(entry);
@@ -954,7 +954,7 @@ async function send1Message() {
 }
 
 async function sendMessages() {
-    var intervalID = window.setInterval(send1Message, 5000);
+    var intervalID = window.setInterval(send1Message, 1000);
 }
 
 sendMessages();

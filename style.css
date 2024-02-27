@@ -476,3 +476,15 @@ button:hover {
         width: 8pt;
     }
 }
+
+#boss_messages {
+    border: solid 2px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, var(--wednesday), #d53a9d);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 600px; 
+    margin-left: 5px; 
+    background-color: none;
+    border-radius: 5px;
+}
