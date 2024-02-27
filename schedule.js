@@ -1,3 +1,7 @@
+let messages = [];
+let numMessages = 0;
+renderMessages();
+
 loadschedule = JSON.parse(localStorage.getItem("schedule"))
 console.log(loadschedule);
 
@@ -874,3 +878,118 @@ function clearSchedule() {
     localStorage.removeItem("schedule");
     window.location.href = "schedule.html";
 }
+
+function recieveMessage(message) {
+    numMessages++;
+    messages[messages.length] = message;
+    console.log(messages);
+    renderMessages();
+}
+
+function renderMessages() {
+    const list = document.getElementById("boss_messages");
+    list.innerHTML = '';
+    let i = 0;
+    while (i < messages.length) {
+        var entry = document.createElement('li');
+        entry.appendChild(document.createTextNode(messages[i]));
+        list.appendChild(entry);
+        i++
+    }
+    if (!messages.length) {
+        var entry = document.createElement('li');
+        entry.appendChild(document.createTextNode("No messages yet"));
+        list.appendChild(entry);
+    }
+}
+
+async function sendMessage() {
+    let i = 0;
+    while (i < 5) {
+        await setTimeout(function() {
+            var MAX = 10;
+            var rand = Math.floor((Math.random() * MAX) + 1);
+            if (rand == 1) {
+                recieveMessage("You suck!");
+            }
+            else if (rand == 2) {
+                recieveMessage("You can't only do emails all day");
+            }
+            else if (rand == 3) {
+                recieveMessage("I hate—so much—the person you chose to be.");
+            }
+            else if (rand == 4) {
+                recieveMessage("You're fired!");
+            }
+            else if (rand == 5) {
+                recieveMessage("Great job!");
+            }
+            else if (rand == 6) {
+                recieveMessage("You're the best");
+            }
+            else if (rand == 7) {
+                recieveMessage("I secretley wish you were my child");
+            }
+            else if (rand == 8) {
+                recieveMessage("I like the way you work it");
+            }
+            else if (rand == 9) {
+                recieveMessage("You are our best employee");
+            }
+            else if (rand == 10) {
+                recieveMessage("Will you marry me?");
+            }
+        }, 5000);
+    }
+}
+
+async function send1Message() {
+    await setTimeout(function() {
+        var MAX = 10;
+        var rand = Math.floor((Math.random() * MAX) + 1);
+        if (rand == 1) {
+            recieveMessage("You suck!");
+        }
+        else if (rand == 2) {
+            recieveMessage("You can't only do emails all day");
+        }
+        else if (rand == 3) {
+            recieveMessage("I hate—so much—the person you chose to be.");
+        }
+        else if (rand == 4) {
+            recieveMessage("You're fired!");
+        }
+        else if (rand == 5) {
+            recieveMessage("Great job!");
+        }
+        else if (rand == 6) {
+            recieveMessage("You're the best");
+        }
+        else if (rand == 7) {
+            recieveMessage("I secretley wish you were my child");
+        }
+        else if (rand == 8) {
+            recieveMessage("I like the way you work it");
+        }
+        else if (rand == 9) {
+            recieveMessage("You are our best employee");
+        }
+        else if (rand == 10) {
+            recieveMessage("Will you marry me?");
+        }
+    }, 1000);
+}
+
+async function send2Message() {
+    await send1Message();
+    await send1Message();
+}
+
+send2Message();
+
+/*
+<li>You suck</li>
+<li>You can't only do emails all day</li>
+<li>I hate—so much—the person you chose to be.</li>
+<li>You're fired!</li>
+*/
