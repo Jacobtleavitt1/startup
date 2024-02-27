@@ -9,6 +9,9 @@ function renderSchedule(myschedule) {
     document.getElementById("a5").textContent = myschedule.a5;
     document.getElementById("a6").textContent = myschedule.a6;
     document.getElementById("a7").textContent = myschedule.a7;
+    if (!myschedule.isa1) {
+        document.getElementById("a1").textContent = "No tasks to display";
+    }
 
     document.getElementById("b1").textContent = myschedule.b1;
     document.getElementById("b2").textContent = myschedule.b2;
@@ -17,6 +20,9 @@ function renderSchedule(myschedule) {
     document.getElementById("b5").textContent = myschedule.b5;
     document.getElementById("b6").textContent = myschedule.b6;
     document.getElementById("b7").textContent = myschedule.b7;
+    if (!myschedule.isb1) {
+        document.getElementById("b1").textContent = "No tasks to display";
+    }
 
     document.getElementById("c1").textContent = myschedule.c1;
     document.getElementById("c2").textContent = myschedule.c2;
@@ -25,6 +31,9 @@ function renderSchedule(myschedule) {
     document.getElementById("c5").textContent = myschedule.c5;
     document.getElementById("c6").textContent = myschedule.c6;
     document.getElementById("c7").textContent = myschedule.c7;
+    if (!myschedule.isc1) {
+        document.getElementById("c1").textContent = "No tasks to display";
+    }
 
     document.getElementById("d1").textContent = myschedule.d1;
     document.getElementById("d2").textContent = myschedule.d2;
@@ -33,6 +42,9 @@ function renderSchedule(myschedule) {
     document.getElementById("d5").textContent = myschedule.d5;
     document.getElementById("d6").textContent = myschedule.d6;
     document.getElementById("d7").textContent = myschedule.d7;
+    if (!myschedule.isd1) {
+        document.getElementById("d1").textContent = "No tasks to display";
+    }
 
     document.getElementById("e1").textContent = myschedule.e1;
     document.getElementById("e2").textContent = myschedule.e2;
@@ -41,6 +53,224 @@ function renderSchedule(myschedule) {
     document.getElementById("e5").textContent = myschedule.e5;
     document.getElementById("e6").textContent = myschedule.e6;
     document.getElementById("e7").textContent = myschedule.e7;
+    if (!myschedule.ise1) {
+        document.getElementById("e1").textContent = "No tasks to display";
+    }
+
+    if (!myschedule.isa1) {
+        document.getElementById("a1c").style.opacity = "0";
+    }
+    if (myschedule.isa1 === 2) {
+        document.getElementById("a1c").checked = True;
+    }
+    if (!myschedule.isa2) {
+        document.getElementById("a2c").style.opacity = "0";
+    }
+    if (myschedule.isa2 === 2) {
+        document.getElementById("a2c").checked = True;
+    }
+    if (!myschedule.isa3) {
+        document.getElementById("a3c").style.opacity = "0";
+    }
+    if (myschedule.isa3 === 2) {
+        document.getElementById("a3c").checked = True;
+    }
+    if (!myschedule.isa4) {
+        document.getElementById("a4c").style.opacity = "0";
+    }
+    if (myschedule.isa4 === 2) {
+        document.getElementById("a4c").checked = True;
+    }
+    if (!myschedule.isa5) {
+        document.getElementById("a5c").style.opacity = "0";
+    }
+    if (myschedule.isa5 === 2) {
+        document.getElementById("a5c").checked = True;
+    }
+    if (!myschedule.isa6) {
+        document.getElementById("a6c").style.opacity = "0";
+    }
+    if (myschedule.isa6 === 2) {
+        document.getElementById("a6c").checked = True;
+    }
+    if (!myschedule.isa7) {
+        document.getElementById("a7c").style.opacity = "0";
+    }
+    if (myschedule.isa7 === 2) {
+        document.getElementById("a7c").checked = True;
+    }
+
+    if (!myschedule.isb1) {
+        document.getElementById("b1c").style.opacity = "0";
+    }
+    if (myschedule.isb1 === 2) {
+        document.getElementById("b1c").checked = True;
+    }
+    if (!myschedule.isb2) {
+        document.getElementById("b2c").style.opacity = "0";
+    }
+    if (myschedule.isb2 === 2) {
+        document.getElementById("b2c").checked = True;
+    }
+    if (!myschedule.isb3) {
+        document.getElementById("b3c").style.opacity = "0";
+    }
+    if (myschedule.isb3 === 2) {
+        document.getElementById("b3c").checked = True;
+    }
+    if (!myschedule.isb4) {
+        document.getElementById("b4c").style.opacity = "0";
+    }
+    if (myschedule.isb4 === 2) {
+        document.getElementById("b4c").checked = True;
+    }
+    if (!myschedule.isb5) {
+        document.getElementById("b5c").style.opacity = "0";
+    }
+    if (myschedule.isb5 === 2) {
+        document.getElementById("b5c").checked = True;
+    }
+    if (!myschedule.isb6) {
+        document.getElementById("b6c").style.opacity = "0";
+    }
+    if (myschedule.isb6 === 2) {
+        document.getElementById("b6c").checked = True;
+    }
+    if (!myschedule.isb7) {
+        document.getElementById("b7c").style.opacity = "0";
+    }
+    if (myschedule.isb7 === 2) {
+        document.getElementById("b7c").checked = True;
+    }
+
+    if (!myschedule.isc1) {
+        document.getElementById("c1c").style.opacity = "0";
+    }
+    if (myschedule.isc1 === 2) {
+        document.getElementById("c1c").checked = True;
+    }
+    if (!myschedule.isc2) {
+        document.getElementById("c2c").style.opacity = "0";
+    }
+    if (myschedule.isc2 === 2) {
+        document.getElementById("c2c").checked = True;
+    }
+    if (!myschedule.isc3) {
+        document.getElementById("c3c").style.opacity = "0";
+    }
+    if (myschedule.isc3 === 2) {
+        document.getElementById("c3c").checked = True;
+    }
+    if (!myschedule.isc4) {
+        document.getElementById("c4c").style.opacity = "0";
+    }
+    if (myschedule.isc4 === 2) {
+        document.getElementById("c4c").checked = True;
+    }
+    if (!myschedule.isc5) {
+        document.getElementById("c5c").style.opacity = "0";
+    }
+    if (myschedule.isc5 === 2) {
+        document.getElementById("c5c").checked = True;
+    }
+    if (!myschedule.isc6) {
+        document.getElementById("c6c").style.opacity = "0";
+    }
+    if (myschedule.isc6 === 2) {
+        document.getElementById("c6c").checked = True;
+    }
+    if (!myschedule.isc7) {
+        document.getElementById("c7c").style.opacity = "0";
+    }
+    if (myschedule.isc7 === 2) {
+        document.getElementById("c7c").checked = True;
+    }
+
+    if (!myschedule.isd1) {
+        document.getElementById("d1c").style.opacity = "0";
+    }
+    if (myschedule.isd1 === 2) {
+        document.getElementById("d1c").checked = True;
+    }
+    if (!myschedule.isd2) {
+        document.getElementById("d2c").style.opacity = "0";
+    }
+    if (myschedule.isd2 === 2) {
+        document.getElementById("d2c").checked = True;
+    }
+    if (!myschedule.isd3) {
+        document.getElementById("d3c").style.opacity = "0";
+    }
+    if (myschedule.isd3 === 2) {
+        document.getElementById("d3c").checked = True;
+    }
+    if (!myschedule.isd4) {
+        document.getElementById("d4c").style.opacity = "0";
+    }
+    if (myschedule.isd4 === 2) {
+        document.getElementById("d4c").checked = True;
+    }
+    if (!myschedule.isd5) {
+        document.getElementById("d5c").style.opacity = "0";
+    }
+    if (myschedule.isd5 === 2) {
+        document.getElementById("d5c").checked = True;
+    }
+    if (!myschedule.isd6) {
+        document.getElementById("d6c").style.opacity = "0";
+    }
+    if (myschedule.isd6 === 2) {
+        document.getElementById("d6c").checked = True;
+    }
+    if (!myschedule.isd7) {
+        document.getElementById("d7c").style.opacity = "0";
+    }
+    if (myschedule.isa7 === 2) {
+        document.getElementById("a7c").checked = True;
+    }
+
+    if (!myschedule.ise1) {
+        document.getElementById("e1c").style.opacity = "0";
+    }
+    if (myschedule.ise1 === 2) {
+        document.getElementById("e1c").checked = True;
+    }
+    if (!myschedule.ise2) {
+        document.getElementById("e2c").style.opacity = "0";
+    }
+    if (myschedule.ise2 === 2) {
+        document.getElementById("e2c").checked = True;
+    }
+    if (!myschedule.ise3) {
+        document.getElementById("e3c").style.opacity = "0";
+    }
+    if (myschedule.ise3 === 2) {
+        document.getElementById("e3c").checked = True;
+    }
+    if (!myschedule.ise4) {
+        document.getElementById("e4c").style.opacity = "0";
+    }
+    if (myschedule.ise4 === 2) {
+        document.getElementById("e4c").checked = True;
+    }
+    if (!myschedule.ise5) {
+        document.getElementById("e5c").style.opacity = "0";
+    }
+    if (myschedule.ise5 === 2) {
+        document.getElementById("e5c").checked = True;
+    }
+    if (!myschedule.ise6) {
+        document.getElementById("e6c").style.opacity = "0";
+    }
+    if (myschedule.ise6 === 2) {
+        document.getElementById("e6c").checked = True;
+    }
+    if (!myschedule.ise7) {
+        document.getElementById("e7c").style.opacity = "0";
+    }
+    if (myschedule.ise7 === 2) {
+        document.getElementById("e7c").checked = True;
+    }
 }
 
 class schedule {
@@ -368,7 +598,9 @@ function addTask() {
     }
 
     renderSchedule(myschedule);
-
-    localStorage.setItem("schedule", JSON.stringify(myschedule))
+    localStorage.setItem("schedule", JSON.stringify(myschedule));
+    loadschedule = JSON.parse(localStorage.getItem("schedule"))
+    renderSchedule(loadschedule);
+    window.location.href = "schedule.html";
 }
 
