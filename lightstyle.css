@@ -332,6 +332,11 @@ button:hover {
     color: white;
 }
 
+button:active {
+    border: none;
+    margin: 2px;
+}
+
 #messages {
     font-size: 14pt;
 }
@@ -501,4 +506,6 @@ button:hover {
     margin-left: 5px; 
     background-color: lightgray;
     border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

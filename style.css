@@ -317,6 +317,11 @@ button:hover {
     background-image: linear-gradient(to left, #743ad5, #d53a9d);
 }
 
+button:active {
+    border: none;
+    margin: 2px;
+}
+
 #messages {
     font-size: 14pt;
 }

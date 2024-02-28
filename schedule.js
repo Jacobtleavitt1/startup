@@ -229,8 +229,8 @@ function renderSchedule(myschedule) {
     if (!myschedule.isd7) {
         document.getElementById("d7c").style.opacity = "0";
     }
-    if (myschedule.isa7 === 2) {
-        document.getElementById("a7c").checked = true;
+    if (myschedule.isd7 === 2) {
+        document.getElementById("d7c").checked = true;
     }
 
     if (!myschedule.ise1) {
@@ -445,6 +445,11 @@ function addTask() {
 
     const day = document.querySelector("#task_day").value;
     const description = document.querySelector("#task_description").value;
+
+    if(!description) {
+        alert("Cannot add blank task.\nPlease add task description and try again.");
+        return;
+    }
 
     console.log(myschedule);
     console.log("day:", day);
@@ -909,13 +914,15 @@ async function send1Message() {
     let mm = today.getMonth() + 1; // months start at 0
     let dd = today.getDate();
     let hours = today.getHours();
-    const minutes = today.getMinutes();
-    const seconds = today.getSeconds();
+    let minutes = today.getMinutes();
+    let seconds = today.getSeconds();
     let mer = "am"
     if (dd < 10) dd = '0' + dd;
     if (mm < 10) mm = '0' + mm;
     if (hours > 12) mer = "pm";
     hours = hours % 12;
+    if (minutes < 10) minutes = '0' + minutes;
+    if (seconds < 10) seconds = '0' + seconds;
     const timestamp = '\t\t\t(' + mm + '/' + dd + '/' + yyyy + ' ' + hours + ':' + minutes + ':' + seconds + mer + ')';
 
     setTimeout(function() {
