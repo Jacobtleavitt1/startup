@@ -441,7 +441,21 @@ button:active {
     #settings {
       display: none;
     }
-  }
+}
+
+@media (max-width: 1300px) {
+    #schedule {
+        border: solid 2px;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to left, var(--wednesday), #d53a9d);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 600px; 
+        margin-left: 5px; 
+        background-color: none;
+        border-radius: 5px;
+    }
+}
 
 .about {
     font-size: 13pt;

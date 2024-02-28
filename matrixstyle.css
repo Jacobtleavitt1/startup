@@ -438,6 +438,16 @@ button:active {
     }
 }
 
+@media (max-width: 1300px) {
+    #schedule {
+        background-color: green;
+        width: 600px; 
+        padding-left: 15px;
+        margin-left: 5px; 
+        background-color: none;
+    }
+}
+
 .about {
     font-size: 13pt;
     width: min(800px, 100vw);
