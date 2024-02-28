@@ -44,3 +44,11 @@ function login(username, password) {
 function logout() {
     localStorage.setItem("username", "unknown user")
 }
+
+function secureTextOff() {
+    document.querySelector("#password").type = "text";
+}
+
+function secureTextOn() {
+    document.querySelector("#password").type = "password";
+}

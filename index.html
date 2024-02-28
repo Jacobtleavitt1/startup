@@ -20,14 +20,14 @@
         <menu>
           <li><a href="logoutabout.html" id="menu-nav-1">About</a></li>
           <li><a href="index.html" id="menu-nav-2">Login</a></li>
-          <label for="toggle" id="settings"><div id="txt">⚙</div></label>
+          <label for="toggle" id="settings" style="margin-right: 30px;"><div id="txt">⚙</div></label>
         </menu>
       </nav>
     </header>
 
     <main>
         <input type="checkbox" id="toggle" class="hidden">
-        <div id="settings-box">
+        <div id="settings-box" style="width: 19em; height: 300px;">
             <h3>Themes</h3>
             <div id="margin">&nbsp;</div>
             <button id="settings-box-button" onclick="swapStyle('lightstyle.css')">Light</button>
@@ -37,6 +37,10 @@
             <div id="margin">&nbsp;</div>
             <button onclick="bounceOn()" id="settings-box-button">On</button>
             <button onclick="bounceOff()" id="settings-box-button">Off</button>
+            <h3>Secure Text Entry</h3>
+            <div id="margin">&nbsp;</div>
+            <button onclick="secureTextOn()" id="settings-box-button">On</button>
+            <button onclick="secureTextOff()" id="settings-box-button">Off</button>
         </div>
         <div id="login-box">
             <h1>Please Login</h1>
@@ -54,7 +58,7 @@
                               <label for="name">🔒</label>
                           </td>
                           <td id="login-box-input">
-                              <input type="text" id="password" placeholder="password" required />
+                              <input type="password" id="password" placeholder="password" required />
                           </td>
                       </tr>
                   </table>
@@ -70,3 +74,5 @@
     </footer>
   </body>
 </html>
+
+<div id="username" style="display:none;"></div>
