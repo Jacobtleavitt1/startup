@@ -33,7 +33,7 @@ apiRouter.get('/schedule', (_req, res) => {
         }
     }
     else {
-        // username or password is wrong
+        // username or password is incorrect
         res.status(401).send({
             message: 'Unauthorized. Incorect username or password.'
         });
@@ -52,7 +52,7 @@ apiRouter.post('/schedule', (req, res) => {
         });
     }
     else {
-        // username or password is wrong
+        // username or password is incorrect
         res.status(401).send({
             message: 'Unauthorized. Incorect username or password.'
         });
