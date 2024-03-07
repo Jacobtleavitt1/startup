@@ -926,6 +926,15 @@ function renderMessages() {
     }
 }
 
+const url = "https://api.quotable.io/random";
+
+fetch(url)
+  .then((x) => x.json())
+  .then((result) => {
+    document.getElementById("service").textContent = result.content;
+    document.getElementById("service2").textContent = "-" + result.author;
+})
+
 async function send1Message() {
     const today = new Date();
     const yyyy = today.getFullYear();
