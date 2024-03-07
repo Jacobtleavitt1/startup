@@ -902,6 +902,41 @@ function clearSchedule() {
     window.location.href = "schedule.html";
 }
 
+async function fetchSchedule(username, password) {
+    console.log("fetch schedule");
+    try {
+        let response = await fetch('/api/schedule', {
+            method: "GET", // *GET, POST, PUT, DELETE, etc.
+            headers: {
+            "username": username,
+            "password": password,
+            },
+        }); // parses JSON response into native JavaScript objects
+        if (response.status === 401) {
+            // new user
+            await fetch('/api/user', {
+                method: "POST",
+                headers: {
+                    "username": username,
+                    "password": password,
+                },
+            });
+            return null;
+        }
+        let myschedule = await response.json();
+        console.log(myschedule);
+        return myschedule;
+    } catch {
+        return null;
+    }
+}
+
+async function refresh() {
+    mySchedule = await fetchSchedule(username, password);
+    localStorage.setItem("schedule", JSON.stringify(mySchedule));
+    renderSchedule(mySchedule);
+}
+
 function recieveMessage(message) {
     numMessages++;
     messages[messages.length] = message;
@@ -927,7 +962,6 @@ function renderMessages() {
 }
 
 const url = "https://api.quotable.io/random";
-
 fetch(url)
   .then((x) => x.json())
   .then((result) => {
