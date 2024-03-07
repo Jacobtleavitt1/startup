@@ -81,6 +81,25 @@ apiRouter.post('/schedule', (_req, res) => {
     }
 });
 
+apiRouter.delete('/schedule', (_req, res) => {
+    console.log("DELETE /schedule")
+    let username = _req.get("username");
+    let password = _req.get("password");
+
+    if (passwords[username] === password) {
+        schedules.set(username, null);
+        res.status(200).send({
+            message: 'OK. Schedule deleted.'
+        })
+    }
+    else {
+        // username or password is incorrect
+        res.status(401).send({
+            message: 'Unauthorized. Incorect username or password.'
+        });
+    }
+});
+
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });

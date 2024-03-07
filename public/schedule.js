@@ -484,7 +484,6 @@ async function addTask() {
             myschedule.a3 = description;
             myschedule.isa3 = 1;
         }
-        //HERE!!!!
         else if (!myschedule.isa4) {
             myschedule.a4 = description;
             myschedule.isa4 = 1;
@@ -897,8 +896,15 @@ async function updateChecks() {
     await setSchedule(JSON.stringify(myschedule));
 }
 
-function clearSchedule() {
+async function clearSchedule() {
     localStorage.removeItem("schedule");
+    await fetch('/api/schedule', {
+        method: "DELETE", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            "username": username,
+            "password": password,
+        },
+    });
     window.location.href = "schedule.html";
 }
 
@@ -934,7 +940,8 @@ async function fetchSchedule(username, password) {
 async function refresh() {
     mySchedule = await fetchSchedule(username, password);
     localStorage.setItem("schedule", JSON.stringify(mySchedule));
-    renderSchedule(mySchedule);
+    loadschedule = JSON.parse(localStorage.getItem("schedule"));
+    window.location.href = "schedule.html";
 }
 
 function recieveMessage(message) {
