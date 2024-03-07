@@ -16,12 +16,22 @@ app.use(express.static('public'));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+// Dump info
+apiRouter.get('/infodump', (_req, res) => {
+    console.log(schedules);
+    console.log(passwords);
+    res.status(200).send({
+        message: schedules + passwords,
+    });
+});
+
 // Get Schedule
 apiRouter.get('/schedule', (_req, res) => {
-    username = _req.username;
-    password = _req.password;
+    let username = _req.get("username");
+    let password = _req.get("password");
+    console.log(username, password);
 
-    if (passwords.get(username) == password) {
+    if (passwords[username] === password) {
         try {
             mySchedule = schedules.get(username);
             res.send(mySchedule);
@@ -40,13 +50,25 @@ apiRouter.get('/schedule', (_req, res) => {
     }
 });
 
-// Submit Schedule
-apiRouter.post('/schedule', (req, res) => {
-    username = _req.username;
-    password = _req.password;
+apiRouter.post('/user', (_req, res) => {
+    let username = _req.get("username");
+    let password = _req.get("password");
+    console.log(username, password);
 
-    if (passwords.get(username) == password) {
-        schedules.set(username, _req.mySchedule);
+    passwords[username] = password;
+    
+    res.status(200).send({
+        message: "OK. User added.",
+    });
+});
+
+// Submit Schedule
+apiRouter.post('/schedule', (_req, res) => {
+    let username = _req.get("username");
+    let password = _req.get("password");
+
+    if (passwords[username] === password) {
+        schedules.set(username, _req.get("schedule"));
         res.status(200).send({
             message: 'OK. Database updated.'
         });

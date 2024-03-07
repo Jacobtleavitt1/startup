@@ -1,8 +1,10 @@
 let messages = [];
 let numMessages = 0;
+const username = localStorage.getItem("username");
+const password = localStorage.getItem("password");
 renderMessages();
 
-loadschedule = JSON.parse(localStorage.getItem("schedule"))
+loadschedule = JSON.parse(localStorage.getItem("schedule"));
 console.log(loadschedule);
 
 function renderSchedule(myschedule) {
@@ -435,7 +437,21 @@ loadschedule ??= new schedule();
 console.log(loadschedule);
 renderSchedule(loadschedule);
 
-function addTask() {
+async function setSchedule(mySchedule) {
+    let response = await fetch('/api/schedule', {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            "username": username,
+            "password": password,
+            "schedule": mySchedule,
+        },
+    });
+    if (response.status != 200) {
+        throw error;
+    }
+}
+
+async function addTask() {
     console.log("adding task")
     myschedule = JSON.parse(localStorage.getItem("schedule"));
     myschedule ??= new schedule();
@@ -609,12 +625,13 @@ function addTask() {
 
     renderSchedule(myschedule);
     localStorage.setItem("schedule", JSON.stringify(myschedule));
+    await setSchedule(JSON.stringify(myschedule));
     loadschedule = JSON.parse(localStorage.getItem("schedule"));
     renderSchedule(loadschedule);
     window.location.href = "schedule.html";
 }
 
-function updateChecks() {
+async function updateChecks() {
     myschedule = JSON.parse(localStorage.getItem("schedule"));
     myschedule ??= new schedule();
     if (Object.keys(myschedule).length === 0) {
@@ -877,6 +894,7 @@ function updateChecks() {
     }
 
     localStorage.setItem("schedule", JSON.stringify(myschedule));
+    await setSchedule(JSON.stringify(myschedule));
 }
 
 function clearSchedule() {
