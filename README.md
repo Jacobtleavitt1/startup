@@ -82,3 +82,17 @@ look like some css is already done.
 | WebSocket JavaScript      | Complete | 20/20 (100%)   | See "Messages from Boss" on schedule.html.                           |
 | Interaction JavaScript    | Complete | 40/40 (100%)   | See settings "⚙" at top, on far right of navigation bar on any page. |
 | TOTAL SCORE               |          | 100/100 (100%) |                                                                      |
+
+**Web Service:** Used external service to put quotes on the website. Now frontend calls server to update the schedule or add a user.
+| Requirement               | Status   | Expected Grade | Notes                                                           |
+|---------------------------|----------|----------------|-----------------------------------------------------------------|
+| Simon service deployed    | Complete | (Prerequisite) |                                                                 |
+| GitHub Repository link    | Complete | (Prerequisite) | See footer.                                                     |
+| README.md documentation   | Complete | (Prerequisite) | You're lookin' at it.                                           |
+| At least 10 Git commits   | Complete | (Prerequisite) |                                                                 |
+| HTTP service              | Complete | 40/40 (100%)   | See index.js.                                                   |
+| Express static middleware | Complete | 10/10 (100%)   | See index.js.                                                   |
+| Frontend calls service    | Complete | 20/20 (100%)   | See schedule.js and quotes under the schedule on schedule.html. |
+| Backend service endpoints | Complete | 20/20 (100%)   | See index.js.                                                   |
+| Frontend calls my service | Complete | 20/20 (100%)   | See schedule on schedule.html and schedule.js.                  |
+| TOTAL SCORE               |          | 100/100 (100%) |                                                                 |
