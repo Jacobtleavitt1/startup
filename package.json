@@ -9,6 +9,7 @@
   "keywords": [],
   "author": "Jacobtleavitt1",
   "dependencies": {
-    "express": "^4.18.3"
+    "express": "^4.18.3",
+    "mongo": "^0.1.0"
   }
 }
