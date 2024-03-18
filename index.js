@@ -22,13 +22,17 @@ const passwordsCollection = db.collection('passwords');
 let passwords = new Map();
 let schedules = new Map();
 
-const schedulesCursor = schedulesCollection.find();
-const schedulesResult = await schedulesCursor.toArray();
-schedules.Result.forEach((i) => schedules[i.username] = i.schedule);
+async function retrieveData() {
+    const schedulesCursor = schedulesCollection.find();
+    const schedulesResult = await schedulesCursor.toArray();
+    schedules.Result.forEach((i) => schedules[i.username] = i.schedule);
 
-const passwordsCursor = passwordsCollection.find();
-const passwordsResult = await passwordsCursor.toArray();
-passwordsResult.forEach((i) => passwords[i.username] = i.password);
+    const passwordsCursor = passwordsCollection.find();
+    const passwordsResult = await passwordsCursor.toArray();
+    passwordsResult.forEach((i) => passwords[i.username] = i.password);
+}
+
+retrieveData();
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -45,6 +49,7 @@ app.use(`/api`, apiRouter);
 
 // Dump info
 apiRouter.get('/infodump', (_req, res) => {
+    console.log('GET /infodump');
     console.log(schedules);
     console.log(passwords);
     res.status(200).send({
@@ -54,6 +59,7 @@ apiRouter.get('/infodump', (_req, res) => {
 
 // Get Schedule
 apiRouter.get('/schedule', (_req, res) => {
+    console.log('GET /schedule');
     let username = _req.get("username");
     let password = _req.get("password");
     console.log(username, password);
@@ -78,6 +84,7 @@ apiRouter.get('/schedule', (_req, res) => {
 });
 
 apiRouter.post('/user', (_req, res) => {
+    console.log('POST /user');
     let username = _req.get("username");
     let password = _req.get("password");
     console.log(username, password);
@@ -92,6 +99,7 @@ apiRouter.post('/user', (_req, res) => {
 
 // Submit Schedule
 apiRouter.post('/schedule', (_req, res) => {
+    console.log('POST /schedule');
     let username = _req.get("username");
     let password = _req.get("password");
 
