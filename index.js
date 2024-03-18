@@ -25,7 +25,9 @@ let schedules = new Map();
 async function retrieveData() {
     const schedulesCursor = schedulesCollection.find();
     const schedulesResult = await schedulesCursor.toArray();
-    schedules.Result.forEach((i) => schedules[i.username] = i.schedule);
+    if (schedulesResult != undefined) {
+        schedulesResult.forEach((i) => schedules[i.username] = i.schedule);
+    }
 
     const passwordsCursor = passwordsCollection.find();
     const passwordsResult = await passwordsCursor.toArray();
@@ -66,7 +68,7 @@ apiRouter.get('/schedule', (_req, res) => {
 
     if (passwords[username] === password) {
         try {
-            mySchedule = schedules.get(username);
+            mySchedule = schedules[username];
             res.send(mySchedule);
         } catch {
             // username wrong or no schedule
@@ -104,8 +106,15 @@ apiRouter.post('/schedule', (_req, res) => {
     let password = _req.get("password");
 
     if (passwords[username] === password) {
-        schedules.set(username, _req.get("schedule"));
-        schedulesCollection.insertOne({ username: `${username}`, schedule: `${_req.get("schedule")}` });
+        schedules[username] = _req.get("schedule");
+        try {
+            schedulesCollection.updateOne({username: username}, {$set: {schedule: _req.get("schedule")}}, {upsert: true})
+            //schedulesCollection.findAndModify({query: {username: username}, 
+            //    update: {$set: {schedule: _req.get("schedule")}},
+            //    upsert: true});
+        } catch {
+            schedulesCollection.insertOne({ username: username, schedule: _req.get("schedule") })
+        }
         res.status(200).send({
             message: 'OK. Database updated.'
         });
@@ -124,7 +133,7 @@ apiRouter.delete('/schedule', (_req, res) => {
     let password = _req.get("password");
 
     if (passwords[username] === password) {
-        schedules.set(username, null);
+        schedules[username] = null;
         schedulesCollection.deleteOne({ username: `${username}` })
         res.status(200).send({
             message: 'OK. Schedule deleted.'
