@@ -22,6 +22,14 @@ const passwordsCollection = db.collection('passwords');
 let passwords = new Map();
 let schedules = new Map();
 
+const schedulesCursor = schedulesCollection.find();
+const schedulesResult = await schedulesCursor.toArray();
+schedules.Result.forEach((i) => schedules[i.username] = i.schedule);
+
+const passwordsCursor = passwordsCollection.find();
+const passwordsResult = await passwordsCursor.toArray();
+passwordsResult.forEach((i) => passwords[i.username] = i.password);
+
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
