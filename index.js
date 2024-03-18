@@ -1,7 +1,23 @@
 const express = require('express');
 const app = express();
-let schedules = new Map();
-let passwords = new Map();
+const { MongoClient } = require('mongodb');
+const cfg = require('./dbConfig.json');
+
+const url = `mongodb+srv://${cfg.username}:${cfg.password}@${cfg.hostname}`;
+const client = new MongoClient(url);
+const db = client.db('startup');
+
+client
+ .connect()
+ .then(() => db.command({ ping: 1 }))
+ .then(() => console.log(`Connected`))
+ .catch((ex) => {
+   console.log(`Error with ${url} because ${ex.message}`);
+   process.exit(1);
+ });
+
+const schedules = db.collection('schedules');
+const passwords = db.collection('passwords');
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
