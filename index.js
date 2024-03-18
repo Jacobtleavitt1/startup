@@ -16,8 +16,11 @@ client
    process.exit(1);
  });
 
-const schedules = db.collection('schedules');
-const passwords = db.collection('passwords');
+const schedulesCollection = db.collection('schedules');
+const passwordsCollection = db.collection('passwords');
+
+let passwords = new Map();
+let schedules = new Map();
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -72,6 +75,7 @@ apiRouter.post('/user', (_req, res) => {
     console.log(username, password);
 
     passwords[username] = password;
+    passwordsCollection.insertOne({ username: `${username}`, password: `${password}` })
     
     res.status(200).send({
         message: "OK. User added.",
@@ -85,6 +89,7 @@ apiRouter.post('/schedule', (_req, res) => {
 
     if (passwords[username] === password) {
         schedules.set(username, _req.get("schedule"));
+        schedulesCollection.insertOne({ username: `${username}`, schedule: `${_req.get("schedule")}` });
         res.status(200).send({
             message: 'OK. Database updated.'
         });
@@ -104,6 +109,7 @@ apiRouter.delete('/schedule', (_req, res) => {
 
     if (passwords[username] === password) {
         schedules.set(username, null);
+        schedulesCollection.deleteOne({ username: `${username}` })
         res.status(200).send({
             message: 'OK. Schedule deleted.'
         })
