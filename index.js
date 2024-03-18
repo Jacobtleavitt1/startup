@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 const { MongoClient } = require('mongodb');
 const cfg = require('./dbConfig.json');
+const cookieParser = require('cookie-parser');
+const uuid = require('uuid');
+const bcrypt = require('bcrypt');
+
+app.use(cookieParser());
 
 const url = `mongodb+srv://${cfg.username}:${cfg.password}@${cfg.hostname}`;
 const client = new MongoClient(url);
@@ -21,6 +26,7 @@ const passwordsCollection = db.collection('passwords');
 
 let passwords = new Map();
 let schedules = new Map();
+let tokens = new Map();
 
 async function retrieveData() {
     const schedulesCursor = schedulesCollection.find();
@@ -62,13 +68,20 @@ apiRouter.get('/infodump', (_req, res) => {
 // Get Schedule
 apiRouter.get('/schedule', (_req, res) => {
     console.log('GET /schedule');
+    const token = _req?.cookies?.token;
     let username = _req.get("username");
     let password = _req.get("password");
     console.log(username, password);
 
-    if (passwords[username] === password) {
+    if (passwords[username] === password || tokens[token] === username) {
         try {
             mySchedule = schedules[username];
+            const token = uuid.v4();
+            res.cookie('token', token, {
+            secure: true,
+            httpOnly: true,
+            sameSite: 'strict',
+            });
             res.send(mySchedule);
         } catch {
             // username wrong or no schedule
@@ -102,10 +115,11 @@ apiRouter.post('/user', (_req, res) => {
 // Submit Schedule
 apiRouter.post('/schedule', (_req, res) => {
     console.log('POST /schedule');
+    const token = _req?.cookies?.token;
     let username = _req.get("username");
     let password = _req.get("password");
 
-    if (passwords[username] === password) {
+    if (passwords[username] === password || tokens[token] === username) {
         schedules[username] = _req.get("schedule");
         try {
             schedulesCollection.updateOne({username: username}, {$set: {schedule: _req.get("schedule")}}, {upsert: true})
@@ -129,10 +143,11 @@ apiRouter.post('/schedule', (_req, res) => {
 
 apiRouter.delete('/schedule', (_req, res) => {
     console.log("DELETE /schedule")
+    const token = _req?.cookies?.token;
     let username = _req.get("username");
     let password = _req.get("password");
 
-    if (passwords[username] === password) {
+    if (passwords[username] === password || tokens[token] === username) {
         schedules[username] = null;
         schedulesCollection.deleteOne({ username: `${username}` })
         res.status(200).send({

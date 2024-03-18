@@ -9,7 +9,10 @@
   "keywords": [],
   "author": "Jacobtleavitt1",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
     "express": "^4.18.3",
-    "mongo": "^0.1.0"
+    "mongo": "^0.1.0",
+    "uuid": "^9.0.1"
   }
 }
