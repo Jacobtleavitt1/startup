@@ -66,13 +66,15 @@ apiRouter.get('/infodump', (_req, res) => {
 });
 
 // Get Schedule
-apiRouter.get('/schedule', (_req, res) => {
+apiRouter.get('/schedule', async (_req, res) => {
     console.log('GET /schedule');
     const token = _req?.cookies?.token;
     let username = _req.get("username");
+    //let password = await bcrypt.hash(_req.get("password"), 10);
     let password = _req.get("password");
     console.log(username, password);
-
+    
+    //passwords[username] === password  await bcrypt.compare(password, passwords[username])
     if (passwords[username] === password || tokens[token] === username) {
         try {
             mySchedule = schedules[username];
@@ -98,9 +100,10 @@ apiRouter.get('/schedule', (_req, res) => {
     }
 });
 
-apiRouter.post('/user', (_req, res) => {
+apiRouter.post('/user', async (_req, res) => {
     console.log('POST /user');
     let username = _req.get("username");
+    //let password = await bcrypt.hash(_req.get("password"), 10);
     let password = _req.get("password");
     console.log(username, password);
 
@@ -113,12 +116,14 @@ apiRouter.post('/user', (_req, res) => {
 });
 
 // Submit Schedule
-apiRouter.post('/schedule', (_req, res) => {
+apiRouter.post('/schedule', async (_req, res) => {
     console.log('POST /schedule');
     const token = _req?.cookies?.token;
     let username = _req.get("username");
+    //let password = await bcrypt.hash(_req.get("password"), 10);
     let password = _req.get("password");
 
+    //passwords[username] === password   await bcrypt.compare(password, passwords[username])
     if (passwords[username] === password || tokens[token] === username) {
         schedules[username] = _req.get("schedule");
         try {
@@ -141,12 +146,13 @@ apiRouter.post('/schedule', (_req, res) => {
     }
 });
 
-apiRouter.delete('/schedule', (_req, res) => {
+apiRouter.delete('/schedule', async (_req, res) => {
     console.log("DELETE /schedule")
     const token = _req?.cookies?.token;
     let username = _req.get("username");
+    //let password = await bcrypt.hash(_req.get("password"), 10);
     let password = _req.get("password");
-
+    //passwords[username] === password  await bcrypt.compare(password, passwords[username])
     if (passwords[username] === password || tokens[token] === username) {
         schedules[username] = null;
         schedulesCollection.deleteOne({ username: `${username}` })
