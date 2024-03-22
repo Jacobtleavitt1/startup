@@ -96,3 +96,17 @@ look like some css is already done.
 | Backend service endpoints | Complete | 20/20 (100%)   | See index.js.                                                   |
 | Frontend calls my service | Complete | 20/20 (100%)   | See schedule on schedule.html and schedule.js.                  |
 | TOTAL SCORE               |          | 100/100 (100%) |                                                                 |
+
+**Login:** Implamented a database that stores and retrieves site data. Also implamented a standard login and registration system. If you do not have an account on sign in the system automatically creates one for you.
+| Requirement             | Status   | Expected Grade | Notes                                                               |
+|-------------------------|----------|----------------|---------------------------------------------------------------------|
+| Simon login deployed    | Complete | (Prerequisite) |                                                                     |
+| GitHub Repository link  | Complete | (Prerequisite) | See footer.                                                         |
+| README.md documentation | Complete | (Prerequisite) | You're lookin' at it.                                               |
+| At least 10 Git commits | Complete | (Prerequisite) |                                                                     |
+| New user registration   | Complete | 20/20 (100%)   | A new user is registered if the system does not find them on login. |
+| User authentication     | Complete | 20/20 (100%)   | An existing user can login.                                         |
+| Stores data in database | Complete | 20/20 (100%)   | Stores application data in MongoDB.                                 |
+| Stores credentials      | Complete | 20/20 (100%)   | Stores and retrieves credentials in MongoDB.                        |
+| Restricted usability    | Complete | 20/20 (100%)   | Unauthenticated users can only see the login and about pages.       |
+| TOTAL SCORE             |          | 100/100 (100%) |                                                                     |
