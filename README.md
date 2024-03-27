@@ -111,7 +111,7 @@ look like some css is already done.
 | Restricted usability    | Complete | 20/20 (100%)   | Unauthenticated users can only see the login and about pages.       |
 | TOTAL SCORE             |          | 100/100 (100%) |                                                                     |
 
-**Websocket:** 
+**Websocket:** Used websocket to send messages from the server to all the clients.
 | Requirement             | Status   | Expected Grade | Notes                 |
 |-------------------------|----------|----------------|-----------------------|
 | Simon login deployed    | Complete | (Prerequisite) |                       |
