@@ -110,3 +110,16 @@ look like some css is already done.
 | Stores credentials      | Complete | 20/20 (100%)   | Stores and retrieves credentials in MongoDB.                        |
 | Restricted usability    | Complete | 20/20 (100%)   | Unauthenticated users can only see the login and about pages.       |
 | TOTAL SCORE             |          | 100/100 (100%) |                                                                     |
+
+**Websocket:** 
+| Requirement             | Status   | Expected Grade | Notes                 |
+|-------------------------|----------|----------------|-----------------------|
+| Simon login deployed    | Complete | (Prerequisite) |                       |
+| GitHub Repository link  | Complete | (Prerequisite) | See footer.           |
+| README.md documentation | Complete | (Prerequisite) | You're lookin' at it. |
+| At least 10 Git commits | Complete | (Prerequisite) |                       |
+| Backend listens         | Complete | 20/20 (100%)   | See peerProxy.js:59.  |
+| Frontend connects       | Complete | 20/20 (100%)   | See main.js:19.       |
+| Websocket used          | Complete | 30/30 (100%)   | See peerProxy.js:6.   |
+| Data displayed          | Complete | 30/30 (100%)   | See schedule.html.    |
+| TOTAL SCORE             |          | 100/100 (100%) |                       |
