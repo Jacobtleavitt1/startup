@@ -16,6 +16,15 @@ if (bounce == 1) {
 console.log("username " + username)
 document.getElementById("username").textContent = username ??= "unknown user";
 
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
+socket.onmessage = (event) => {
+    const data = JSON.parse(event.data)
+    console.log('received: ', data);
+    recieveMessage(data.message);
+};
+
 function swapStyle(sheet) {
     localStorage.setItem("stylesheet", sheet);
     document.getElementById("pagestyle").setAttribute("href", sheet); 
