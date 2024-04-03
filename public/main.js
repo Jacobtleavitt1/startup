@@ -45,10 +45,19 @@ async function login(username, password) {
     const passwordEl = document.querySelector("#password");
     localStorage.setItem("username", nameEl.value);
     localStorage.setItem("password", passwordEl.value);
-    let myschedule = await fetchSchedule(nameEl.value, passwordEl.value);
-    localStorage.setItem("schedule", JSON.stringify(myschedule));
-    window.location.href = "schedule.html";
-    console.log("Log in");
+    try{
+        let myschedule = await fetchSchedule(nameEl.value, passwordEl.value);
+        if (myschedule != null) {
+            localStorage.setItem("schedule", JSON.stringify(myschedule));
+            window.location.href = "schedule.html";
+        }
+        else {
+            alert("Error. Username taken.")
+        }
+    } catch (e) {
+        alert("Error. Username taken.");
+        return;
+    }
 }
 
 function logout() {
@@ -77,14 +86,16 @@ async function fetchSchedule(username, password) {
         }); // parses JSON response into native JavaScript objects
         if (response.status === 401) {
             // new user
-            await fetch('/api/user', {
+            response = await fetch('/api/user', {
                 method: "POST",
                 headers: {
                     "username": username,
                     "password": password,
                 },
             });
-            return null;
+            if (response.status != 200){
+                return null
+            }
         }
         let myschedule = await response.json();
         console.log(myschedule);

@@ -107,13 +107,22 @@ apiRouter.post('/user', async (_req, res) => {
     //let password = await bcrypt.hash(_req.get("password"), 10);
     let password = _req.get("password");
     console.log(username, password);
+    console.log(passwords)
 
-    passwords[username] = password;
-    passwordsCollection.insertOne({ username: `${username}`, password: `${password}` })
-    
-    res.status(200).send({
-        message: "OK. User added.",
-    });
+    if (passwords[username] != undefined) {
+        console.log("Conflict. User not created.")
+        res.status(409).send({
+            message: "Conflict. Username already taken."
+        });
+    }
+    else {
+        passwords[username] = password;
+        passwordsCollection.insertOne({ username: `${username}`, password: `${password}` })
+        
+        res.status(200).send({
+            message: "OK. User added.",
+        });
+    }
 });
 
 // Submit Schedule
