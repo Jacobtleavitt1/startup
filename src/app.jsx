@@ -20,8 +20,9 @@ export default function App() {
           <div id="logo"></div>
           <nav>
             <menu>
+              <li><NavLink to="schedule" id="menu-nav-1">Schedule</NavLink></li>
               <li><NavLink to="about" id="menu-nav-1">About</NavLink></li>
-              <li><NavLink to="login" id="menu-nav-2">Login</NavLink></li>
+              <li><NavLink to="" id="menu-nav-2">Logout</NavLink></li>
             </menu>
           </nav>
         </header>
