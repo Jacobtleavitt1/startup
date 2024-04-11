@@ -1,4 +1,5 @@
 import React from 'react';
+import {login} from '../services/public/main2'
 
 export function Login() {
   return (
@@ -6,24 +7,26 @@ export function Login() {
             <h1>Please Login</h1>
               <div id="login-form">
                   <table>
-                      <tr>
-                          <td id="login-box-label">
-                              <label for="name">@</label>
-                          </td>
-                          <td id="login-box-input">
-                              <input type="text" id="username_input" placeholder="username" required />
-                          </td>
-                      </tr>
-                      <tr>
-                          <td id="login-box-label">
-                              <label for="name">🔒</label>
-                          </td>
-                          <td id="login-box-input">
-                              <input type="password" id="password" placeholder="password" required />
-                          </td>
-                      </tr>
+                    <tbody>
+                        <tr>
+                            <td id="login-box-label">
+                                <label htmlFor="name">@</label>
+                            </td>
+                            <td id="login-box-input">
+                                <input type="text" id="username_input" placeholder="username" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="login-box-label">
+                                <label htmlFor="name">🔒</label>
+                            </td>
+                            <td id="login-box-input">
+                                <input type="password" id="password" placeholder="password" required />
+                            </td>
+                        </tr>
+                      </tbody>
                   </table>
-                  <button type="submit" onclick="login()">Login</button>
+                  <button type="submit" onClick={login} >Login</button>
               </div>
         </div>
   );

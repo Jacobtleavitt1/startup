@@ -1,12 +1,16 @@
-function scheduleBoy() {
+function startup() {
+    let messages = [];
+    let numMessages = 0;
+    const username = localStorage.getItem("username");
+    const password = localStorage.getItem("password");
+    renderMessages();
 
-let messages = [];
-let numMessages = 0;
-const username = localStorage.getItem("username");
-const password = localStorage.getItem("password");
-renderMessages();
+    loadschedule = JSON.parse(localStorage.getItem("schedule"));
 
-loadschedule = JSON.parse(localStorage.getItem("schedule"));
+    loadschedule ??= new schedule();
+    console.log(loadschedule);
+    renderSchedule(loadschedule);
+}
 
 function renderSchedule(myschedule) {
     document.getElementById("a1").textContent = myschedule.a1;
@@ -434,10 +438,6 @@ class schedule {
     }
 }
 
-loadschedule ??= new schedule();
-console.log(loadschedule);
-renderSchedule(loadschedule);
-
 async function setSchedule(mySchedule) {
     let response = await fetch('/api/schedule', {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -452,7 +452,7 @@ async function setSchedule(mySchedule) {
     }
 }
 
-async function addTask() {
+export async function addTask() {
     console.log("adding task")
     myschedule = JSON.parse(localStorage.getItem("schedule"));
     myschedule ??= new schedule();
@@ -631,7 +631,7 @@ async function addTask() {
     window.location.href = "schedule.html";
 }
 
-async function updateChecks() {
+export async function updateChecks() {
     myschedule = JSON.parse(localStorage.getItem("schedule"));
     myschedule ??= new schedule();
     if (Object.keys(myschedule).length === 0) {
@@ -897,7 +897,7 @@ async function updateChecks() {
     await setSchedule(JSON.stringify(myschedule));
 }
 
-async function clearSchedule() {
+export async function clearSchedule() {
     localStorage.removeItem("schedule");
     await fetch('/api/schedule', {
         method: "DELETE", // *GET, POST, PUT, DELETE, etc.
@@ -938,7 +938,7 @@ async function fetchSchedule(username, password) {
     }
 }
 
-async function refresh() {
+export async function refresh() {
     mySchedule = await fetchSchedule(username, password);
     localStorage.setItem("schedule", JSON.stringify(mySchedule));
     loadschedule = JSON.parse(localStorage.getItem("schedule"));
@@ -977,5 +977,3 @@ fetch(url)
     document.getElementById("service").textContent = result.content;
     document.getElementById("service2").textContent = "-" + result.author;
 })
-
-}

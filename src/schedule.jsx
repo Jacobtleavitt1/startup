@@ -1,11 +1,13 @@
 import React from 'react';
+import { useEffect } from 'react';
+import {updateChecks, refresh, clearSchedule, addTask} from '../services/public/schedule2';
 
 export function Schedule() {
   return (
     <div>
       <h1>Schedule</h1>
-          <div id="schedule" style="width: 100vw; height: 397px; margin: 8px; overflow: scroll; white-space: nowrap;">
-          <table class="schedule-day" id="monday">
+          <div id="schedule" style={{width: "100vw", height: "397px", margin: "8px", overflow: "scroll", whiteSpace: "nowrap"}}>
+          <table className="schedule-day" id="monday">
               <tr>
                   <th id="schedule-icon"></th>
                   <th>
@@ -48,7 +50,7 @@ export function Schedule() {
                   </td>
               </tr>
           </table>
-          <table class="schedule-day" id="tuesday">
+          <table className="schedule-day" id="tuesday">
             <tr>
               <th id="schedule-icon"></th>
               <th>
@@ -91,7 +93,7 @@ export function Schedule() {
               </td>
           </tr>
           </table>
-          <table class="schedule-day" id="wednesday">
+          <table className="schedule-day" id="wednesday">
               <tr>
                   <th id="schedule-icon"></th>
                   <th>
@@ -134,7 +136,7 @@ export function Schedule() {
                   </td>
               </tr>
           </table>
-          <table class="schedule-day" id="thursday">
+          <table className="schedule-day" id="thursday">
               <tr>
                   <th id="schedule-icon"></th>
                   <th>
@@ -177,7 +179,7 @@ export function Schedule() {
                   </td>
               </tr>
           </table>
-          <table class="schedule-day" id="friday">
+          <table className="schedule-day" id="friday">
               <tr>
                   <th id="schedule-icon"></th>
                   <th>
@@ -221,18 +223,18 @@ export function Schedule() {
               </tr>
           </table>
           </div>
-          <button onclick="updateChecks()">Update Checks</button>
-          <span style="margin: 5px;"></span>
-          <button onclick="clearSchedule()">Clear Schedule</button>
-          <span style="margin: 5px;"></span>
-          <button onclick="refresh()">Refresh Schedule</button>
-          <h5 id="service" style="margin-bottom: 0;"></h5>
-          <h5 id="service2" style="margin-top: 0; margin-bottom: 7px;"></h5>
-          <h5 style="display: none; margin: 0;"><a href="schedule.html">Export schedule data</a></h5>
+          <button onClick={updateChecks}>Update Checks</button>
+          <span style={{margin: "5px"}}></span>
+          <button onClick={clearSchedule}>Clear Schedule</button>
+          <span style={{margin: "5px"}}></span>
+          <button onClick={refresh}>Refresh Schedule</button>
+          <h5 id="service" style={{marginBottom: "0"}}></h5>
+          <h5 id="service2" style={{marginTop: "0", marginBottom: "7px"}}></h5>
+          <h5 style={{display: "none", margin: "0"}}><a href="schedule.html">Export schedule data</a></h5>
 
         <h3>Add new task</h3>
         <div>
-          <label for="name">Day</label>
+          <label htmlFor="name">Day</label>
           <select name="day" id="task_day">
               <option value="a">Monday</option>
               <option value="b">Tuesday</option>
@@ -241,10 +243,10 @@ export function Schedule() {
               <option value="e">Friday</option>
           </select>
           <br />
-          <label for="name">Task Description</label>
+          <label htmlFor="name">Task Description</label>
           <input type="text" id="task_description" placeholder="description" />
           <br />
-          <button type="submit" onclick="addTask()">Add Task</button>
+          <button type="submit" onClick={addTask}>Add Task</button>
         </div>
         <br />
         <br />
