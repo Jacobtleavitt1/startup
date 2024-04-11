@@ -123,3 +123,16 @@ look like some css is already done.
 | Websocket used          | Complete | 30/30 (100%)   | See peerProxy.js:6.   |
 | Data displayed          | Complete | 30/30 (100%)   | See schedule.html.    |
 | TOTAL SCORE             |          | 100/100 (100%) |                       |
+
+**React:** Converted web application to react using vite.
+| Requirement                 | Status   | Expected Grade | Notes                                                                                    |
+|-----------------------------|----------|----------------|------------------------------------------------------------------------------------------|
+| Simon react deployed        | Complete | (Prerequisite) | Prof. Jensen said if we are submitting for demo day we don't need to deploy Simon react. |
+| GitHub Repository link      | Complete | (Prerequisite) | See footer.                                                                              |
+| README.md documentation     | Complete | (Prerequisite) | You're lookin' at it.                                                                    |
+| At least 10 Git commits     | Complete | (Prerequisite) |                                                                                          |
+| Bundled with Vite           | Complete | 10/10 (100%)   |                                                                                          |
+| Functional React components | Complete | 30/30 (100%)   | schedule.jsx, login/jsx, about.jsx.                                                      |
+| React router                | Complete | 30/30 (100%)   |                                                                                          |
+| React hooks                 | Complete | 0/30 (100%)    |                                                                                          |
+| TOTAL SCORE                 |          | 70/100 (100%)  |                                                                                          |
